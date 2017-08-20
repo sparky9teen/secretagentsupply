@@ -1,26 +1,38 @@
 html {
+  /* standard default font size is 16px */
   font-size: 18px;
 }
 
 body {
-  display: flex;
-  justify-content: center;
   font-family: Helvetica;
+  font-size: 1rem;
   color: white;
   background-color: white;
+
+  /* To avoid triggering horizontal scrolling with footer background. */
+  overflow-x: hidden;
 }
 
-.container {
+.banner {
+  display: flex;
+  justify-content: center;
+  height: 25rem;
+  background-image: url("./backgrounds/moto.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top: 2.32rem solid black;
+  border-bottom: 2.5rem solid firebrick;
+}
+
+.sitecontainer {
   width: 960px;
-}
-
-header {
-  background-color: black;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  margin-top: -2.32rem;
 }
 
 .logo img {
@@ -34,41 +46,30 @@ header {
   margin: 0.66rem 0;
 }
 
-.banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 25rem;
-  background-image: url("./backgrounds/moto.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.alert {
-  width: 26rem;
+.headline {
+  width: 20rem;
   background-color: black;
+  padding: 2rem 3rem;
+  margin-top: 9rem;
   margin-bottom: 4.5rem;
 }
 
-.alert h6 {
+.headline h6 {
   font-size: 1rem;
   font-weight: bold;
-  padding: 2rem 0 .25rem 3rem;
+  padding-bottom: .25rem;
 }
 
-.alert h3 {
+.headline h3 {
   font-size: 2rem;
   font-weight: bold;
-  padding: 0 0 2rem 3rem;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 2.25rem;
-  background-color: firebrick;
+  margin-top: 7.25rem;
 }
 
 a {
@@ -80,18 +81,8 @@ a {
 .items {
   display: flex;
   justify-content: space-between;
+  margin-top: 3.75rem;
 }
-
-/* .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;;
-  align-items: center;
-  width: 16rem;
-  height: 16rem;
-  margin: 3rem 0;
-  border: 4px solid black;
-} */
 
 .items img {
   display: flex;
@@ -101,7 +92,6 @@ a {
   height: 8.5rem;
   padding: 2rem 2rem;
   border: 4px solid black;
-  margin-top: 3rem;
 }
 
 .items span {
@@ -139,12 +129,16 @@ footer {
   display: flex;
   align-items: center;
   font-size: .75rem;
-  color: white;
   text-align: left;
   height: 5rem;
   background-color: black;
+
+  /* Use negative margins and padding to extend the background in both directions. */
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0 9999rem;
 }
 
-@media only screen and (max-width: ) {
+/* @media only screen and (max-width: ) {
 
-}
+} */
